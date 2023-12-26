@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+:root{
+--Very-dark-desaturated-blue: hsl(238, 29%, 16%);
+--Soft-red: hsl(14, 88%, 65%);
+--Very-dark-grayish-blue: hsl(237, 12%, 33%);
+--Dark-grayish-blue: hsl(240, 6%, 50%);
+--Light-grayish-blue: hsl(240, 5%, 91%);
+--Soft-violet: hsl(273, 75%, 66%);
+--Soft-blue: hsl(240, 73%, 65%);
+
+} 
+
+*,
+*::after,
+*::before{
+   box-sizing: border-box;
+}
+body{
+    font-family: 'Kumbh Sans', sans-serif;
+    background: linear-gradient(hsl(273, 75%, 66%),hsl(240, 73%, 65%));
+    margin: 80px auto;
+}
+h1{
+    color: var(--Very-dark-grayish-blue);
+    font-weight: 700;
+    text-align: center;
+}
+.wrapper{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.wrapper .container{
+    background: url(images/bg-pattern-mobile.svg),white;
+    background-repeat: no-repeat;
+    background-position: 50% 1%;
+    padding: 30px 20px;
+    max-width: 350px;
+    border-radius: 15px;
+}
+.container .left{
+    width:250px;
+    top: 10%;
+    left: 20%;
+    transform: translateY(-20px);
+    position: absolute;
+}
+.container .left .illustration-desktop{
+    display: none;
+}
+.container .left .cube{
+    display: none;
+}
+.container .right{
+    margin-top: 90px;
+}
+.right .accordion{
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--Dark-grayish-blue);
+    border-bottom: 1px solid var(--Light-grayish-blue);
+    padding: 15px 0;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+}
+.right .accordion .header{
+    display: flex;
+    gap:10px;
+    justify-content: space-between;
+    align-items: center;
+}
+.right .accordion .header.active{
+    color: var(--Very-dark-grayish-blue);
+    font-weight: 700;
+}
+.right .accordion .header.active img{
+    transform: rotate(180deg);
+}
+.right .accordion .header:hover{
+    color: var(--Soft-red);
+}
+.right .accordion .header:active{
+    color: var(--Very-dark-grayish-blue);
+    font-weight: 700;
+}
+.right .accordion .answer{
+    display: none;
+    transition: all 1s ease;
+}
+@media (min-width:500px) {
+    .container .left{
+        left: 25%;
+        transform: translateY(-20px);
+        position: absolute;
+    }
+}
+@media(min-width:600px){
+    .container .left{
+        top: 17%;
+        left: 30%;
+    }
+}
+@media (min-width:700px) {
+    .wrapper .container{
+        background:white;
+        padding: 0px;
+        max-width: 700px;
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 30px;
+        margin: 0;
+        height: 100%;
+    }
+    .container .left{
+        background-image: url(images/bg-pattern-desktop.svg);
+        background-position:100% 60%;
+        background-repeat: no-repeat;
+        position: relative;
+        top: 0%;
+        left: 0%;
+        height: 500px;
+        width: -moz-fit-content;
+        width: fit-content;
+        
+    }
+    .container .left .illustration{
+        display: none;
+    }
+    .container .left .illustration-desktop{
+        display: flex;
+        position: relative;
+        top: 20%;
+        height: 281px;
+        width: 70%;
+        left: -20%;
+    }
+    .container .left .illustration-desktop img{
+        width: 370px;
+    }
+    .container .left .cube{
+        display: flex;
+        position: absolute;
+        top: 30%;
+        left: -30%;
+    }
+    .container .right{
+        margin: 50px 40px;
+    }
+}
+@media (min-width:1000px) {
+    .wrapper .container{
+        background-image: none;
+        max-width: 900px;
+        align-items: center;
+
+    }
+    .container .left{
+       max-width: 400px;
+    }
+    .container .right{
+        margin-top: 0px;
+    }
+    .container .left .illustration-desktop{
+        top: 10%;
+        height: 370px;
+        width: 50%;
+        left: -25%;
+    }
+    .container .left .illustration-desktop img{
+        width: 900px;
+    }
+    .container .left .cube{
+        top: 40%;
+        left: -25%;
+    }
+}
